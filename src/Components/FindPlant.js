@@ -12,7 +12,7 @@ class FindPlant extends Component {
     <LocalNursery />
     return(
       <div>
-
+        <h2>FindPlant -> Your Local Nursery!</h2>
       </div>
     )
   }

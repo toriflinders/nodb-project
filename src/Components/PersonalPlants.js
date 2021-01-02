@@ -4,9 +4,7 @@ class PersonalPlants extends Component {
   
   render(){
     return(
-      <div>
-        <h1>PersonalPlants</h1>
-      </div>
+      <div></div>
     )
   }
 }

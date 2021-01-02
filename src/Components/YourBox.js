@@ -5,7 +5,7 @@ const YourBox = () => {
   <PersonalPlants />
   return (
     <div>
-      <h2>Your Box</h2>
+      <h2>YourBox w/ PersonalPlants in it -> Your Garden Box!</h2>
       
     </div>
   )

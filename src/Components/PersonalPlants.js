@@ -4,7 +4,9 @@ class PersonalPlants extends Component {
   
   render(){
     return(
-      <div></div>
+      <div>
+        <p>{this.props.plant.name} {this.props.plant.sunNeeds}</p>
+      </div>
     )
   }
 }

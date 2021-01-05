@@ -7,7 +7,7 @@ class LocalNursery extends Component {
       name: plant.name,
       sunNeeds: plant.sunNeeds
     }
-    this.props.selectPlantFn(newPlant)
+    this.props.selectPlantFn(newPlant);
   }
   render(){
     return (

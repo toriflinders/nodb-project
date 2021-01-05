@@ -17,3 +17,8 @@
   height: 50vh;
   background-color: rgb(236, 140, 236);
 }
+.garden {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}

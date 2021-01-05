@@ -9,18 +9,22 @@ import './App.css';
 class App extends Component {
   constructor(){
     super();
-
     this.state = {
       personalPlants: [],
       possiblePlants: []
     }
   }
-  
   componentDidMount(){
     this.getPossiblePlants();
     this.getPersonalPlants();
   }
-
+ getPossiblePlants = () => {
+    axios.get('/api/garden/possibleplants')
+      .then(res => {
+        this.setState({possiblePlants: res.data})
+      })
+      .catch(err => console.log(err));
+  }
   getPersonalPlants = () => {
     axios.get('/api/garden/personalplants')
       .then(res => {
@@ -28,26 +32,29 @@ class App extends Component {
       })
       .catch(err => console.log(err))
   }
-  
-  getPossiblePlants = () => {
-    axios.get('/api/garden/possibleplants')
-      .then(res => {
-        this.setState({possiblePlants: res.data})
-      })
-      .catch(err => console.log(err));
-  }
   addPersonalPlant = (newPlant) => {
     axios.post('/api/garden/personalplants', newPlant)
       .then(res => {
-        this.setState({
-          personalPlants: res.data,
-        })
+        this.setState({personalPlants: res.data})
       })
       .catch(err => console.log(err))
   }
-  
+  updatePersonalPlant = (id, editPlant) => {
+    let body = {name: editPlant};
 
-
+    axios.put(`/api/garden/personalplants/${id}`, body)
+      .then(res => {
+        this.setState({personalPlants: res.data});
+      })
+      .catch(err => console.log(err));
+  }
+  deletePersonalPlant = (id) => {
+    axios.delete(`/api/garden/personalplants/${id}`)
+      .then(res => {
+        this.setState({personalPlants: res.data});
+      })
+      .catch(err => console.log(err))
+  }
   render(){
     console.log(this.state.personalPlants);
     console.log(this.state.possiblePlants);
@@ -58,7 +65,11 @@ class App extends Component {
           <Header />
         </section>
         <section className="YourBox">
-          <YourBox personalPlants={this.state.personalPlants}/>
+          <YourBox 
+            personalPlants={this.state.personalPlants} 
+            editPlantFn={this.updatePersonalPlant}
+            deletePersonalPlantFn={this.deletePersonalPlant}
+          />
         </section>
         <section className="FindPlant">
           <FindPlant 
@@ -66,12 +77,8 @@ class App extends Component {
             selectPlantFn={this.addPersonalPlant}
             />
         </section>
-        
       </div>
     );
   }
-  
 }
-
 export default App;
-// possiblePlants={this.state.possiblePlants.data} data={data}

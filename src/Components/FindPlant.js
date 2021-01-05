@@ -1,11 +1,9 @@
 import React, {Component} from "react";
-import axios from 'axios';
+// import axios from 'axios';
 // import data from '../data.json';
 import LocalNursery from './LocalNursery';
 
 class FindPlant extends Component {
- 
-
   render(){
     // console.log(this.state.possiblePlants);
     // console.log(this.state.personalPlants);

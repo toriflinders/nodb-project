@@ -1,15 +1,15 @@
 const data = require('../../data.json')
 
 let personalPlants = [];
-let id = 0;
+let id = 1;
 
 module.exports = {
   getPersonalPlants: (req, res) => {
-    console.log(personalPlants)
+    // console.log(personalPlants)
     res.status(200).send(personalPlants)
   },
   getPossiblePlants: (req, res) => {
-    console.log(data)
+    // console.log(data)
     res.status(200).send(data)
   },
   addPersonalPlant: (req, res) => {
@@ -23,23 +23,19 @@ module.exports = {
     personalPlants.push(plant);
     id++;
     res.status(200).send(personalPlants)
+  },
+  updatePersonalPlant: (req, res) => {
+    const {id} = req.params,
+          {name} = req.body;
+    let editPlant = personalPlants.find(element => element.id === +id);
+    editPlant.name = name;
+    res.status(200).send(personalPlants);
+  },
+  deletePersonalPlant: (req, res) => {
+    const {id} = req.params;
+
+    let index = personalPlants.findIndex(element => element.id === +id);
+    personalPlants.splice(index, 1);
+    res.status(200).send(personalPlants);
   }
-  // updatePersonalPlant: (req, res) => {
-  //   const {id} = req.params;
-
-  //   let editPlant = possiblePlants.find(element => element.id === +id);
-  //   editPlant = {
-  //     id: editPlant.id,
-  //     name: req.body.name || editPlant.name,
-  //     sunNeeds: req.body.sunNeeds || editPlant.sunNeeds
-  //   }
-  //   res.sendStatus(200);
-  // },
-  // deletePersonalPlant: (req, res) => {
-  //   const {id} = req.params;
-
-  //   let plantId = possiblePlants.findIndex(element => element.id === +id);
-  //   possiblePlants.splice(plantId, 1);
-  //   res.sendStatus(200);
-  // }
 }

@@ -21,7 +21,8 @@ class PersonalPlants extends Component {
   }
   render(){
     return(
-      <div>
+      <div className='personalplants'>
+        <button onClick={() => this.props.deletePersonalPlantFn(this.props.plant.id)}>Unplant</button>
         {this.state.isEditing
         ? (
           <div>
@@ -37,8 +38,8 @@ class PersonalPlants extends Component {
             <p>{this.props.plant.name}</p>
           </div>
         )}
-        <p>{this.props.plant.name}      {this.props.plant.sunNeeds}</p>
-        <button onClick={() => this.props.deletePersonalPlantFn(this.props.plant.id)}>Unplant</button>
+        <p>{this.props.plant.sunNeeds}</p>
+        <img src={this.props.plant.image} alt={this.props.plant.name}></img>
       </div>
     )
   }

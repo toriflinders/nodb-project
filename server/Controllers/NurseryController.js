@@ -13,12 +13,13 @@ module.exports = {
     res.status(200).send(data)
   },
   addPersonalPlant: (req, res) => {
-    const {name, sunNeeds} = req.body;
+    const {name, sunNeeds, image} = req.body;
 
     let plant = {
       id: id,
       name: name, 
-      sunNeeds: sunNeeds
+      sunNeeds: sunNeeds,
+      image: image
     }
     personalPlants.push(plant);
     id++;

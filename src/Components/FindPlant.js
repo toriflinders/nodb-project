@@ -16,8 +16,9 @@ class FindPlant extends Component {
       />
     )
     return(
-      <div className='findplant'>
-        <h2>FindPlant -{">"} Your Local Nursery!</h2>
+      <div>
+        <h2>Your Local Nursery!</h2>
+        <h3>Pick Your Plants!</h3>
         {mappedPlant}
       </div>
     )

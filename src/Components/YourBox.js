@@ -12,8 +12,9 @@ const YourBox = props => {
     )
   return (
     <div>
-      <h2>YourBox w/ PersonalPlants in it -{">"} Your Garden Box!</h2>
-      <div className='garden'>
+      <h2>Your Garden Box!</h2>
+      <h3>Nurture Your Plants!</h3>
+      <div className='yourbox'>
         {mappedPersonalPlant}
       </div>
     </div>

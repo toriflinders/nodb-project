@@ -5,15 +5,25 @@ class LocalNursery extends Component {
     const {plant} = this.props;
     let newPlant = {
       name: plant.name,
-      sunNeeds: plant.sunNeeds
+      sunNeeds: plant.sunNeeds,
+      image: plant.image
     }
     this.props.selectPlantFn(newPlant);
   }
   render(){
     return (
-      <div onClick={this.handleAdd}>
-        <p>{this.props.plant.name} {this.props.plant.sunNeeds}</p>
+      <div className='localnurs'>
+        <p>{this.props.plant.name}</p>
+        <p>{this.props.plant.sunNeeds}</p>
+
+        
+        
+        <img src={this.props.plant.image} alt={this.props.plant.name}></img>
+        <div className='nursButt'>
+          <button onClick={this.handleAdd}>Pick Plant</button>
+        </div>
       </div>
+      
     )
   }
 }

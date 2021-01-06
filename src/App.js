@@ -61,22 +61,19 @@ class App extends Component {
     
     return (
       <div className="App">
-        <section className="Header">
-          <Header />
-        </section>
-        <section className="YourBox">
-          <YourBox 
-            personalPlants={this.state.personalPlants} 
-            editPlantFn={this.updatePersonalPlant}
-            deletePersonalPlantFn={this.deletePersonalPlant}
-          />
-        </section>
-        <section className="FindPlant">
+        <Header />
+        <YourBox 
+          personalPlants={this.state.personalPlants} 
+          editPlantFn={this.updatePersonalPlant}
+          deletePersonalPlantFn={this.deletePersonalPlant}
+        />
+        <div className='findplant'>
           <FindPlant 
             possiblePlants={this.state.possiblePlants}
             selectPlantFn={this.addPersonalPlant}
-            />
-        </section>
+          />
+        </div>
+        
       </div>
     );
   }

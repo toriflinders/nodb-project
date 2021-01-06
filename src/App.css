@@ -1,24 +1,35 @@
 .App {
+  width: 100vw;
+  height: 100vh;
+  background-color: lightyellow;
   text-align: center;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
-.Header {
+.findplant {
+  background-color: lightskyblue;
   width: 100vw;
-  height: 12vh;
-  font-size: 30pt;
-  background-color: lightseagreen;
+  height: 450vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
-.YourBox {
+.yourbox {
+  border: 5px solid black;
+  background-color: lightgreen;
   width: 100vw;
-  height: 38vh;
-  background-color: lightpink;
-}
-.FindPlant {
-  width: 100vw;
-  height: 50vh;
-  background-color: rgb(236, 140, 236);
-}
-.garden {
+  height: 40vh;
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+img {
+  width: 100px;
+  height: 100px;
+}
+.nursButt {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   flex-wrap: wrap;
 }

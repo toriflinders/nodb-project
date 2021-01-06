@@ -19,8 +19,11 @@ class FindPlant extends Component {
       <div>
         <h2>Your Local Nursery!</h2>
         <h3>Pick Your Plants!</h3>
-        {mappedPlant}
+        <div className='findplant'>
+          {mappedPlant}
+        </div>
       </div>
+      
     )
   }
 }

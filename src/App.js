@@ -67,7 +67,7 @@ class App extends Component {
           editPlantFn={this.updatePersonalPlant}
           deletePersonalPlantFn={this.deletePersonalPlant}
         />
-        <div className='findplant'>
+        <div>
           <FindPlant 
             possiblePlants={this.state.possiblePlants}
             selectPlantFn={this.addPersonalPlant}

@@ -15,13 +15,11 @@ class LocalNursery extends Component {
       <div className='localnurs'>
         <p>{this.props.plant.name}</p>
         <p>{this.props.plant.sunNeeds}</p>
-
-        
         
         <img src={this.props.plant.image} alt={this.props.plant.name}></img>
-        <div className='nursButt'>
-          <button onClick={this.handleAdd}>Pick Plant</button>
-        </div>
+        
+        <button onClick={this.handleAdd}>Pick Plant</button>
+        
       </div>
       
     )
